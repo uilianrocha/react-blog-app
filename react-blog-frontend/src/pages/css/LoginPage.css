@@ -44,3 +44,23 @@ form {
 .login-button:hover {
   background-color: #333333;
 }
+
+
+.signup-text {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #666; 
+  text-align: center;
+}
+
+.signup-link {
+  color: #4A90E2;
+  text-decoration: none; 
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+  color: #3A78C5; 
+  text-decoration: underline; 
+}
