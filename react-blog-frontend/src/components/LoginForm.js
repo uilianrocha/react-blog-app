@@ -4,9 +4,26 @@ import { Link } from "react-router-dom";
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleUsernameChange = (e) => setUsername(e.target.value);
+  const handlePasswordChange = (e) => setPassword(e.target.value);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    setError("");
+
+    try {
+      console.log("Logging in with:", { username, password });
+
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+    } catch (err) {
+      setError("Login failed. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -20,7 +37,7 @@ const LoginForm = () => {
           placeholder="Username"
           required
           value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={handleUsernameChange}
         />
       </label>
       <label htmlFor="password">
@@ -32,11 +49,12 @@ const LoginForm = () => {
           placeholder="Password"
           required
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={handlePasswordChange}
         />
       </label>
-      <button type="submit" className="login-button">
-        Login
+      {error && <p className="error-message">{error}</p>}
+      <button type="submit" className="login-button" disabled={isLoading}>
+        {isLoading ? "Loading..." : "Login"}
       </button>
       <p className="signup-text">
         New to our blog?{" "}
