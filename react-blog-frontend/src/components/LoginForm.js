@@ -15,6 +15,23 @@ const LoginForm = () => {
     setIsLoading(true);
     setError("");
 
+    const validateInputs = () => {
+      if (username.length < 4) {
+        setError("Username must be at least 3 characters long.");
+        return false;
+      }
+      if (password.length < 6) {
+        setError("Password must be at least 6 characters long.");
+        return false;
+      }
+      return true;
+    };
+
+    if (!validateInputs()) {
+      setIsLoading(false);
+      return;
+    }
+
     try {
       console.log("Logging in with:", { username, password });
 
