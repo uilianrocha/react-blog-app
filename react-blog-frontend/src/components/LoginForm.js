@@ -73,12 +73,6 @@ const LoginForm = () => {
       <button type="submit" className="login-button" disabled={isLoading}>
         {isLoading ? "Loading..." : "Login"}
       </button>
-      <p className="signup-text">
-        New to our blog?{" "}
-        <Link to="/signup" className="signup-link">
-          Create an account!
-        </Link>
-      </p>
     </form>
   );
 };
