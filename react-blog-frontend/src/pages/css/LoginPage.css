@@ -1,13 +1,11 @@
-
 .login-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%; 
-  max-width: 500px; 
-  margin: 20px auto; 
-  background-color: #f0f0f0;
+  width: 80%;
+  max-width: 500px;
+  margin: 20px auto;
   padding: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -23,7 +21,7 @@
 form {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
 }
 
 .login-text {
@@ -46,7 +44,8 @@ form {
   margin-top: 20px;
 }
 
-.login-button:hover {
+.login-button:hover,
+.signup-button:hover {
   background-color: #333333;
 }
 
