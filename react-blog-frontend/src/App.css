@@ -3,16 +3,6 @@ body {
   font-size: 18px;
 }
 
-button {
-  padding: 16px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  background-color: black;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
 h3,
 h4 {
   margin-bottom: 0;
@@ -23,8 +13,9 @@ nav {
   text-align: center;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   background: white;
+  z-index: 10;
 }
 
 nav ul {
